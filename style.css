@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    font-family: 'Zen Old Mincho', serif;
+    scroll-behavior: smooth;
+}
+
+section {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+}
+
+.vertically-aligned {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+h1 {
+    font-size: 84px;
+}
+
+/* Intro */
+div#intro {
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    background-color: white;
+    position: fixed;
+    animation: hidden 1s forwards 2.3s;
+}
+
+.intro__load-container {
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div#intro .start {
+    background-color: black;
+    border-radius: 100%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: circleAnimation .7s forwards .6s;
+}
+
+div#intro .line {
+    background-color: black;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: lineRightAnimation 1s forwards 1s;
+}
+
+div#intro .finish {
+    background-color: black;
+    border-radius: 100%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+    animation: circleAnimation .7s forwards 1.8s;
+}
+
+/* Me */
+section#me {
+    height: 100vh;
+}
+
+section#me h1 {
+    margin: 0;
+    opacity: 0;
+    position: relative;
+    animation: fadeUp 1s forwards 3.0s;
+}
+
+section#me h2 {
+    margin: 0;
+    opacity: 0;
+    position: relative;
+    animation: fadeUp 1s forwards 3.2s;
+}
+
+section#me h4 {
+    margin-top: 4px;
+    opacity: 0;
+    position: relative;
+    animation: fadeUp 1s forwards 3.4s;
+}
+
+section#me .divider {
+    width: 60px;
+    margin-top: 40px;
+}
+
+section#me .line {
+    background-color: black;
+    transform: translateY(-50%);
+    animation: lineRightAnimation 1s forwards 3.6s;
+}
+
+/* About */
+section#about {
+    height: 100vh;
+}
+
+section#about .content {
+    width: 50%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+section#about img {
+    width: 40%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0;
+}
+
+/* Animations */
+
+@keyframes hidden {
+    from   {
+        opacity: 1;
+        display: block;
+    }
+    to   {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes circleAnimation {
+    from   {
+        width: 0;
+        height: 0;
+    }
+    to   {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@keyframes lineRightAnimation {
+    from   {
+        width: 1px;
+        height: 1px;
+    }
+    to   {
+        width: 100%;
+        height: 1px;
+        z-index: -1;
+    }
+}
+
+@keyframes fadeUp {
+    from   {
+        opacity: 0;
+        bottom: -20px;
+    }
+    to   {
+        opacity: 1;
+        bottom: 0;
+    }
+}
